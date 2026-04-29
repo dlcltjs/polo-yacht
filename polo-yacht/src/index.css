@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@200;300;400;500&family=Syncopate:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-rivanavy-900: #0a0e17;
+  --color-rivanavy-800: #111827; 
+  --color-rivanavy-950: #060b13;
+  --color-rivacyan: #48cae4;
+  
+  --font-wide: 'Syncopate', sans-serif;
+  --font-script: 'Alex Brush', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-rivanavy-900 font-sans overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .nautical-bg {
+    background-color: var(--color-rivanavy-900);
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(72, 202, 228, 0.05) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .glass-header {
+    background: rgba(10, 14, 23, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-btn {
+    @apply px-6 py-2.5 border border-white/30 rounded-full text-[10px] tracking-[0.2em] font-wide uppercase transition-all duration-300;
+    background: transparent;
+  }
+  .glass-btn:hover {
+    @apply bg-white text-rivanavy-900 border-white;
+  }
+
+  .font-wide { font-family: var(--font-wide); }
+  .font-script { font-family: var(--font-script); }
+  .font-sans { font-family: var(--font-sans); }
+  
+  .animate-spin-slow {
+    animation: spin 30s linear infinite;
+  }
+  .animate-reverse-spin {
+    animation: reverse-spin 40s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes reverse-spin {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
