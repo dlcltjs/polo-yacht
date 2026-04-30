@@ -76,7 +76,7 @@ export default function Header() {
         {/* 1. 좌측 세로 포인트 블록 (새로운 로고) */}
         <div className="w-[80px] md:w-[130px] bg-white border-r border-gray-100 flex flex-col justify-center items-center h-full flex-shrink-0">
           <Link to="/">
-            <img src="/ox_logo.svg" alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+            <img src="/ox_logo.png" alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
           </Link>
         </div>
 
