@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Search, Calendar, Sailboat, Menu, X, ChevronDown } from 'lucide-react';
+import { Search, Calendar, Menu, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 // 마인드맵 구조를 동일하게 반영한 메뉴 데이터
@@ -73,10 +73,11 @@ export default function Header() {
   return (
     <>
       <header className="fixed w-full top-0 z-[100] bg-white shadow-md flex h-[100px] md:h-[130px] transition-all duration-300">
-        {/* 1. 좌측 세로 포인트 블록 */}
-        <div className="w-[80px] md:w-[130px] bg-[#00122e] flex flex-col justify-center items-center h-full flex-shrink-0">
-          <Sailboat className="text-white w-8 h-8 md:w-12 md:h-12 mb-2" strokeWidth={1.5} />
-          <span className="text-white font-bold tracking-[0.2em] text-[10px] md:text-sm">P.Y</span>
+        {/* 1. 좌측 세로 포인트 블록 (새로운 로고) */}
+        <div className="w-[80px] md:w-[130px] bg-white border-r border-gray-100 flex flex-col justify-center items-center h-full flex-shrink-0">
+          <Link to="/">
+            <img src="/ox_logo.svg" alt="Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+          </Link>
         </div>
 
         {/* 2. 우측 영역 (1열 & 2열) */}
